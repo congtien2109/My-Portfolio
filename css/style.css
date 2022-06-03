@@ -36,9 +36,7 @@ header {
     transition: all .5s;
 }
 
-.navbar-dark 
-.navbar-nav 
-.nav-link:hover{
+#collapsibleNavbar .nav-item .nav-link:hover{
     color: #35a22c;
 }
 
@@ -50,8 +48,9 @@ header {
     content: "";
     width: 0;
     height: 3px;
-    background-color: green;
+    background-color: #35a22c;
     display: block;
+    transition: all .5s;
 }
 
 .menu li.active::after {
@@ -62,6 +61,52 @@ header {
     width: 100%;
 }
 
+
+@media screen and (max-width: 992px){
+    header .navbar-collapse {
+        background-color: white;
+        width: 100%;
+    }
+    
+    #collapsibleNavbar .nav-item .nav-link{
+        color: #35a22c;
+    }
+    #collapsibleNavbar .nav-item .nav-link:hover{
+        color: #fff;
+        background-color: #35a22c;
+    }
+    .menu li:hover:after{
+        width: 0;
+    }
+
+    .menu li.active::after {
+        width: 0;
+    }
+}
+
+@media (min-width: 768px){
+.navbar-expand-md .navbar-collapse {
+    /* display: -ms-flexbox!important; */
+    display: flex!important;
+    /* -ms-flex-preferred-size: auto; */
+    flex-basis: auto;
+    background-color: transparent;
+    
+}
+}
+@media screen and (max-width: 376px) {
+    header .navbar-brand i {
+        font-size:8vw
+    }
+
+    header .navbar-brand {
+        font-size: 7vw
+    }
+}
+
+header .navbar-toggler {
+    background-color: #35a22c;
+}
 /* CAROUSEL  */
 .carousel-item {
     background-position: center;
@@ -88,7 +133,7 @@ header {
 }
 
 .carousel-indicators{
-    margin-bottom: 5rem;
+    bottom: 10%;
 }
 
 .carousel-indicators li{
@@ -117,6 +162,48 @@ header {
     background-image: url(../images/mountains-1.jpg);
 }
 
+@media screen and (max-height: 415px) {
+    .carousel-caption img {
+        width:100px
+    }
+
+    .carousel .carousel-caption h5 {
+        font-size: 5vw;
+        line-height: 5vw
+    }
+
+    .carousel .carousel-caption p {
+        font-size: 3vw
+    }
+
+    .carousel-caption {
+        padding-top: 0
+    }
+}
+
+@media screen and (max-width: 320px) {
+    .carousel__thumb {
+        width:120px
+    }
+
+    .carousel-caption img {
+        width: 120px
+    }
+
+    .carousel .carousel-caption h5 {
+        font-size: 10vw;
+        line-height: 10vw
+    }
+
+    .carousel .carousel-caption p {
+        font-size: 5vw
+    }
+
+    .carousel-caption {
+        padding-top: 0
+    }
+}
+
 .carousel-thumb img {
     width: 140px;
     border-radius: 50%;
@@ -126,6 +213,7 @@ header {
 .carousel-caption {
     top: 50%;
     transform: translateY(-50%);
+    z-index: 0;
 }
 
 /* PROJECT */
@@ -150,6 +238,22 @@ header {
     border: 1px solid #1a1d2d;
     margin: 0 5px;
 
+}
+
+@media screen and (max-width: 575.98px) {
+    .project__content .nav .nav-link {
+        padding:.5rem
+    }
+
+    .bg-overlay {
+        background-position: right top
+    }
+}
+
+@media screen and (max-width: 415px) {
+    .project__content .nav .nav-item {
+        margin-bottom:1rem
+    }
 }
 
 /* CARD */
